@@ -16,16 +16,16 @@ function Contact() {
                 </div>
                 <div className="contact__social">
                     {/* Instagram Icon */}
-                    <abbr title="Instagram"><Link href='https://www.instagram.com/davi.frontend/' passHref><img src="/images/social/instagram.png" alt="Instagram Logo" width="32px" height="32px"/></Link></abbr>
+                    <abbr title="Instagram"><a href='https://www.instagram.com/davi.frontend/'><img src="/images/social/instagram.png" alt="Instagram Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* WhattsApp Icon */}
-                    <abbr title="WhattsApp"><Link href="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F" passHref><img src="/images/social/whatsapp.png" alt="WhattsApp Logo" width="32px" height="32px"/></Link></abbr>
+                    <abbr title="WhattsApp"><a href="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F"><img src="/images/social/whatsapp.png" alt="WhattsApp Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* Gmail Icon */}
-                    <abbr title="Gmail"><Link href="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui" passHref ><img src="/images/social/gmail.png" alt="Gmail Logo" width="32px" height="32px"/></Link></abbr>
+                    <abbr title="Gmail"><a href="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui" ><img src="/images/social/gmail.png" alt="Gmail Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* LinkedIn Icon */}
-                    <abbr title="LinkedIn"><Link href="https://www.linkedin.com/in/davi16lacerda/" passHref><img src="/images/social/linkedin.png" alt="LinkedIn Icon" width="32px" height="32px"/></Link></abbr>
+                    <abbr title="LinkedIn"><a href="https://www.linkedin.com/in/davi16lacerda/"><img src="/images/social/linkedin.png" alt="LinkedIn Icon" width="32px" height="32px"/></a></abbr>
                     </div>
             </ContactContainer>
             <Footer></Footer>

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect } from "react";
-import Link from "next/link";
 
 import { ContentContainer } from "../styles/content";
 import Footer from "../components/Footer/Footer";
@@ -135,10 +134,9 @@ function Content({ data, dataType, trailer }) {
                             <p>{data.overview}</p>
 
                             <div className="btn__container">
-                                <Link
+                                <a
                                     href={trailer}
                                     className="trailer"
-                                    passHref
                                 >
                                     <button className="open">
                                         <svg className="open__icon">
@@ -146,7 +144,7 @@ function Content({ data, dataType, trailer }) {
                                         </svg>
                                         <span className="open__text">Play</span>
                                     </button>
-                                </Link>
+                                </a>
 
                                 <button
                                     className="watchlist_add"
