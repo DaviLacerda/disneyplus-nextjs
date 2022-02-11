@@ -1,6 +1,7 @@
 import Header from "../components/Header/Header";
 import { SearchContainer } from "../styles/search";
 import Footer from "../components/Footer/Footer";
+import Link from "next/link";
 
 import axios from "axios";
 import { useState } from "react";
@@ -65,11 +66,11 @@ function Search() {
                             }
                             if (index.poster_path) {
                                 return (
-                                    <a href={`/content?name=${link}`} key={keyValue}>
+                                    <Link href={`/content?name=${link}`} key={keyValue}>
                                         <img
                                             src={`https://image.tmdb.org/t/p/original${index.poster_path}`}
                                         ></img>
-                                    </a>
+                                    </Link>
                                 );
                             }
                         })}
