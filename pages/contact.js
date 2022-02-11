@@ -16,16 +16,16 @@ function Contact() {
                 </div>
                 <div className="contact__social">
                     {/* Instagram Icon */}
-                    <abbr title="Instagram"><a href='https://www.instagram.com/davi.frontend/' target='_blank'><img src="/images/social/instagram.png" alt="Instagram Logo" width="32px" height="32px"/></a></abbr>
+                    <abbr title="Instagram"><a href='https://www.instagram.com/davi.frontend/' target='_blank' rel="noreferrer"><img src="/images/social/instagram.png" alt="Instagram Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* WhattsApp Icon */}
-                    <abbr title="WhattsApp"><a href="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F" target='_blank'><img src="/images/social/whatsapp.png" alt="WhattsApp Logo" width="32px" height="32px"/></a></abbr>
+                    <abbr title="WhattsApp"><a href="https://api.whatsapp.com/send?phone=5534992750234&text=Ol%C3%A1%20Davi%2C%20tudo%20bem%3F" target='_blank' rel="noreferrer"><img src="/images/social/whatsapp.png" alt="WhattsApp Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* Gmail Icon */}
-                    <abbr title="Gmail"><a href="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui"  target='_blank'><img src="/images/social/gmail.png" alt="Gmail Logo" width="32px" height="32px"/></a></abbr>
+                    <abbr title="Gmail"><a href="mailto:davi16lacerda@gmail.com?subject=Digite%20o%20assunto%20aqui"  target='_blank' rel="noreferrer"><img src="/images/social/gmail.png" alt="Gmail Logo" width="32px" height="32px"/></a></abbr>
 
                     {/* LinkedIn Icon */}
-                    <abbr title="LinkedIn"><a href="https://www.linkedin.com/in/davi16lacerda/" target='_blank'><img src="/images/social/linkedin.png" alt="LinkedIn Icon" width="32px" height="32px"/></a></abbr>
+                    <abbr title="LinkedIn"><a href="https://www.linkedin.com/in/davi16lacerda/" target='_blank' rel="noreferrer"><img src="/images/social/linkedin.png" alt="LinkedIn Icon" width="32px" height="32px"/></a></abbr>
                     </div>
             </ContactContainer>
             <Footer></Footer>
