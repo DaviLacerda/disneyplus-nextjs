@@ -1,6 +1,5 @@
 import { GlobalStyles } from "../styles/GlobalStyles"
 import Head from "next/head"
-import { useRouter } from "next/router"
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,7 +8,7 @@ function MyApp({ Component, pageProps }) {
         <title>Disney+ | Movies and Shows</title>
       </Head>
       <Component {...pageProps} />
-      <GlobalStyles />
+      <GlobalStyles></GlobalStyles>
     </>
   )
 }
