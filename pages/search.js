@@ -66,7 +66,7 @@ function Search() {
                             }
                             if (index.poster_path) {
                                 return (
-                                    <Link href={`/content?name=${link}`} key={keyValue}>
+                                    <Link href={`/content?name=${link}`} passHref key={keyValue}>
                                         <img
                                             src={`https://image.tmdb.org/t/p/original${index.poster_path}`}
                                         ></img>

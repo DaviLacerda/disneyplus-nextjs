@@ -14,7 +14,7 @@ function Page404(){
                     <h2>Not Found</h2>
                 </div>
                 <div className="homeRedirect">
-                    <Link href="/">
+                    <Link href="/" passHref>
                         <button>Home</button>
                     </Link>
                 </div>

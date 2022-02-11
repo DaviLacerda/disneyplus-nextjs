@@ -138,6 +138,7 @@ function Content({ data, dataType, trailer }) {
                                 <Link
                                     href={trailer}
                                     className="trailer"
+                                    passHref
                                 >
                                     <button className="open">
                                         <svg className="open__icon">

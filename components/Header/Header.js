@@ -30,7 +30,7 @@ function Header() {
             <div className="left">
                 <div className="left__logo"></div>
 
-                <Link href="/">
+                <Link href="/" passHref>
                     <div className="left__container">
                         <svg className="left__icon" viewBox="0 0 36 36"> 
                             <path d="M26.882 19.414v10.454h-5.974v-5.227h-5.974v5.227H8.961V19.414H5.227L17.921 6.72l12.694 12.694h-3.733z"></path>
@@ -39,7 +39,7 @@ function Header() {
                     </div>
                 </Link>
                 
-                <Link href="/search">
+                <Link href="/search" passHref>
                     <div className="left__container">
                         <svg className="left__icon" viewBox="0 0 36 36">
                             <path d="M21.866 24.337c-3.933 2.762-9.398 2.386-12.914-1.13-3.936-3.936-3.936-10.318 0-14.255 3.937-3.936 10.32-3.936 14.256 0 3.327 3.327 3.842 8.402 1.545 12.27l4.56 4.558a2 2 0 0 1 0 2.829l-.174.173a2 2 0 0 1-2.828 0l-4.445-4.445zm-5.786-1.36a6.897 6.897 0 1 0 0-13.794 6.897 6.897 0 0 0 0 13.794z"></path>
@@ -48,7 +48,7 @@ function Header() {
                     </div>
                 </Link>
 
-                <Link href="/watchlist">
+                <Link href="/watchlist" passHref>
                     <div className="left__container">
                         <span>+</span>
                         <p>Watchlist</p>
@@ -84,7 +84,7 @@ function Header() {
             </div>
 
             <div className="right">
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                     <h2>Davi Lacerda</h2>
                     <div className="dropdown__avatar"></div>
                 </Link>
