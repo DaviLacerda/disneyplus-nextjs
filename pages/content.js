@@ -137,6 +137,7 @@ function Content({ data, dataType, trailer }) {
                                 <a
                                     href={trailer}
                                     className="trailer"
+                                    target='_blank'
                                 >
                                     <button className="open">
                                         <svg className="open__icon">
