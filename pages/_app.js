@@ -1,4 +1,4 @@
-import { GlobalStyles } from "../GlobalStyles"
+import { GlobalStyles } from "../styles/GlobalStyles"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
