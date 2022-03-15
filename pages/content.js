@@ -7,72 +7,55 @@ import Footer from "../components/Footer/Footer";
 // import components
 import Header from "../components/Header/Header";
 
+const api_key = process.env.NEXT_PUBLIC_API_KEY;
+
 export async function getServerSideProps({ query }) {
     let name = query.name.toLowerCase().replace(/([-])/g, " ");
 
-    let responseData = await axios.get(
-        `https://api.themoviedb.org/3/search/multi?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${name}`
-    );
-
-    let data = undefined;
-    if (responseData.data.results.length) {
-        data = responseData.data.results[0];
-
-        let responseDataType = undefined;
-
-        if (data.media_type === "movie") {
-            responseDataType = await axios.get(
-                `https://api.themoviedb.org/3/movie/${data.id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-            );
-        } else {
-            responseDataType = await axios.get(
-                `https://api.themoviedb.org/3/tv/${data.id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-            );
+    try {
+        let response = await axios.get(
+            `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&query=${name}`
+        );
+    
+        let data = response.data.results[0];
+    
+        let id = data.id;
+        let type = data.media_type;
+    
+        switch (type) {
+            case "movie":
+                let movie = await axios.get(
+                    `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
+                );
+                return {
+                    props: {
+                        data: { ...movie.data, type },
+                        trailer: `https://youtube.com/results?search_query=${movie.data.title}+trailer`,
+                    },
+                };
+    
+            case "tv":
+                let tv = await axios.get(
+                    `https://api.themoviedb.org/3/tv/${id}?api_key=${api_key}`
+                );
+                return {
+                    props: {
+                        data: { ...tv.data, type },
+                        trailer: `https://youtube.com/results?search_query=${tv.data.name}+trailer`,
+                    },
+                };
+    
+            default:
+                break;
         }
-
-        let dataType = responseDataType.data;
-        let responseTrailer = undefined;
-
-        if (data.media_type === "movie") {
-            responseTrailer = await axios.get(
-                `https://api.themoviedb.org/3/movie/${dataType.id}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-            );
-        } else {
-            responseTrailer = await axios.get(
-                `https://api.themoviedb.org/3/tv/${dataType.id}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-            );
-        }
-
-        let trailer = undefined;
-
-        for (let i = 0; i < responseTrailer.length; i++) {
-            if (responseTrailer[i].name.toLowerCase().includes("trailer")) {
-                trailer = `https://youtube.com/watch?v=${responseTrailer[i].key}`;
-            }
-        }
-
-        if (trailer === undefined) {
-            trailer = `https://youtube.com/results?search_query=${
-                dataType.title || dataType.name
-            }+trailer`;
-        }
-
+    } catch (error) {
         return {
-            props: {
-                data,
-                dataType,
-                trailer,
-            },
-        };
-        
-    } else{
-        return {
-            notFound: true,
+            notFound: true
         }
     }
 }
 
-function Content({ data, dataType, trailer }) {
+function Content({ data, trailer }) {
     const addWatchList = (span) => {
         span.classList.toggle("added");
         span.textContent === "+"
@@ -113,23 +96,20 @@ function Content({ data, dataType, trailer }) {
                             }}
                         ></div>
                         <div className="content__header">
-                            <h1>{data.title || data.name}</h1>
+                            <h1>{data.name || data.title}</h1>
                             <span>
-                                {data.media_type}
-                                {dataType.runtime &&
-                                    ` • ${dataType.runtime} minutes`}
-                                {dataType.number_of_seasons &&
+                                {data.type}
+                                {data.runtime && ` • ${data.runtime} minutes`}
+                                {data.number_of_seasons &&
                                     ` • ${
-                                        dataType.number_of_seasons == 1
-                                            ? `${dataType.number_of_episodes} Episodes`
-                                            : `${dataType.number_of_seasons} Seasons`
+                                        data.number_of_seasons == 1
+                                            ? `${data.number_of_episodes} Episodes`
+                                            : `${data.number_of_seasons} Seasons`
                                     }`}
-                                {dataType.first_air_date &&
-                                    ` • ${
-                                        dataType.first_air_date.split("-")[0]
-                                    }`}
-                                {dataType.release_date &&
-                                    ` • ${dataType.release_date.split("-")[0]}`}
+                                {data.first_air_date &&
+                                    ` • ${data.first_air_date.split("-")[0]}`}
+                                {data.release_date &&
+                                    ` • ${data.release_date.split("-")[0]}`}
                             </span>
                             <p>{data.overview}</p>
 
@@ -137,7 +117,7 @@ function Content({ data, dataType, trailer }) {
                                 <a
                                     href={trailer}
                                     className="trailer"
-                                    target='_blank'
+                                    target="_blank"
                                     rel="noreferrer"
                                 >
                                     <button className="open">
