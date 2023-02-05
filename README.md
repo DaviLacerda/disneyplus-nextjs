@@ -1,6 +1,6 @@
 # Disney ➕
 
-![Disney+ Clone Mockup](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/assets/readme/Mockup.png)
+![Disney+ Clone Mockup](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/disney-banner.png)
 
 I'm a big fan from Disney. When i subscribe´d in Disney+ service, i said for me, one day i'll recreate that. Obviously, is not perfect like the original, but i think this is pretty good!
 
@@ -11,20 +11,6 @@ I'm a big fan from Disney. When i subscribe´d in Disney+ service, i said for me
   * [Styled Components](https://styled-components.com/)
   * [Axios](https://github.com/axios/axios)
   * [Swiper JS](https://swiperjs.com/)
-
-# Preview ✨
-
-* Home
-
-![Home Preview](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/assets/readme/home_preview.gif)
-
-* Content
-
-![Content Preview](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/assets/readme/content_preview.gif)
-
-* Search Bar
-
-![Search Bar Preview](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/assets/readme/search_preview.gif)
 
 # Getting started 🚀
 
@@ -52,7 +38,6 @@ After that, to run project, run this commands:
   yarn install
   yarn start
 ```
-<p align="center">  <i>or</i> </p>
 
 ##### npm
 ```
