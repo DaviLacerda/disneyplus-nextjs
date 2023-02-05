@@ -1,6 +1,6 @@
 # Disney ➕
 
-![Disney+ Clone Mockup](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/disney-banner.png)
+![Disney+ Clone Mockup](https://github.com/DaviLacerda/disneyplus-nextjs/blob/main/public/disney-readme.png)
 
 I'm a big fan from Disney. When i subscribe´d in Disney+ service, i said for me, one day i'll recreate that. Obviously, is not perfect like the original, but i think this is pretty good!
 
